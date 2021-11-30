@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.SearchFragment">
+
+    <LinearLayout
+        android:id="@+id/search_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_shape"
+        android:layout_marginHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            />
+
+        <EditText
+            android:id="@+id/search_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="#F3F4F6"
+            android:hint="Search.."
+            android:minHeight="48dp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_news_rv"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/search_ll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <TextView
+        android:id="@+id/search_info_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The search has not yet\ntaken place"
+        android:gravity="center"
+        android:textColor="#272424"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
